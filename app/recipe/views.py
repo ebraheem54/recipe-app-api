@@ -39,11 +39,11 @@ class RecipeViewSet(viewsets.ModelViewSet):
 
 
 class TagViewSet(
-        mixins.DestroyModelMixin,
-        mixins.UpdateModelMixin,
-        mixins.ListModelMixin,
-        viewsets.GenericViewSet
-    ):
+    mixins.DestroyModelMixin,
+    mixins.UpdateModelMixin,
+    mixins.ListModelMixin,
+    viewsets.GenericViewSet,
+):
     """Manage tags in the database"""
 
     serializer_class = serializers.TagSerializer

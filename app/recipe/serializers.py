@@ -3,7 +3,7 @@ Serializers for recipe APIS
 """
 
 from rest_framework import serializers
-from core.models import (Recipe,Tag)
+from core.models import Recipe, Tag
 
 
 class RecipeSerializer(serializers.ModelSerializer):
@@ -22,11 +22,10 @@ class RecipeDetailsSerializer(RecipeSerializer):
         fields = RecipeSerializer.Meta.fields + ["description"]
 
 
-
 class TagSerializer(serializers.ModelSerializer):
-    """serializers for tags """
+    """serializers for tags"""
+
     class Meta:
-        model=Tag
-        fields=['id','name']
-        read_only_fields=['id']
-        
+        model = Tag
+        fields = ["id", "name"]
+        read_only_fields = ["id"]
